@@ -51,11 +51,11 @@ jobs:
 
     # 6. Build APK
     - name: Build Release APK
-      run: ./gradlew assembleRelease
+      run: ./gradlew assembleDebug -Xlint
 
     # 7. Upload APK artifact
     - name: Upload APK artifact
       uses: actions/upload-artifact@v4
       with:
         name: personaldnsfilter-apk
-        path: app/build/outputs/apk/release/*.apk
+        path: app/build/outputs/apk/*/*.apk
